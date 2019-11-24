@@ -116,7 +116,7 @@ a:hover:after{
     font-size: 6.5em;
     color: #FFF;
     line-height: 1em;
-    margin-left: 1em;
+    margin-left: 1.3em;
   }
   .bring-up{
     margin-top: -1.2em; 
@@ -125,7 +125,7 @@ a:hover:after{
     color: black;
   }
   .description {
-    padding: 0em 7em;
+    padding: 0em 7em 0 4em;
   }
   .description .link{
     margin-top: 1em;
