@@ -4,6 +4,11 @@
       <h2 class="title bring-up">Buonasera</h2>
       <h2 class="title title-black">Simplicity</h2>
     </div>
+      <li v-for="(blog, index) in blogPosts" :key="index">
+        <span >
+          {{ blog.title }}
+        </span>
+      </li>
     <div class="description">
       <p>I’m Luca Spagnolo, a software engineer that loves to create and build extraordinary ideas.</p>
       <br><br><br>
@@ -33,6 +38,11 @@ export default {
   },
   components: {
     Logo
+  },
+  computed: {
+    blogPosts() {
+      return this.$store.state.blogPosts;
+    },
   }
 }
 </script>
