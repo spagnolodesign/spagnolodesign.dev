@@ -22,11 +22,14 @@
 import Logo from '~/components/Logo.vue'
 
 export default {
-  head: {
-    title: 'Luca Spagnolo - Software engineer',
-    meta: [
-      { hid: 'description', name: 'description', content: 'I’m Luca Spagnolo, a software engineer that loves to create and build extraordinary ideas. Services: App Development, Web Development' }
-    ]
+  head() {
+    return {
+      script: [{ src: 'https://identity.netlify.com/v1/netlify-identity-widget.js' }],
+      title: 'Luca Spagnolo - Software engineer',
+      meta: [
+        { hid: 'description', name: 'description', content: 'I’m Luca Spagnolo, a software engineer that loves to create and build extraordinary ideas. Services: App Development, Web Development' }
+      ]
+    };
   },
   components: {
     Logo
