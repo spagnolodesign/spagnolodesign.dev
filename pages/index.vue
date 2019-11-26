@@ -1,14 +1,6 @@
 <template>
   <div class="container">
-    <div>
-      <h2 class="title bring-up">Buonasera</h2>
-      <h2 class="title title-black">Simplicity</h2>
-    </div>
-      <li v-for="(blog, index) in blogPosts" :key="index">
-        <span >
-          {{ blog.title }}
-        </span>
-      </li>
+    <IntroWord text="Buonasera" />
     <div class="description">
       <p>I’m Luca Spagnolo, a software engineer that loves to create and build extraordinary ideas.</p>
       <br><br><br>
@@ -24,7 +16,8 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import gsap from 'gsap';
+import IntroWord from '~/components/IntroWord.vue';
 
 export default {
   head() {
@@ -37,12 +30,27 @@ export default {
     };
   },
   components: {
-    Logo
+    IntroWord
   },
   computed: {
-    blogPosts() {
-      return this.$store.state.blogPosts;
-    },
+    // blogPosts() {
+    //   console.log(this.$store.state)
+    //   return this.$store.state.blogPosts;
+    // },
+  },
+  mounted () {
+    const easing = "slow(0.7, 0.5, false)";
+    gsap.from('.description', {
+      y: "-=10",
+      duration: .8,
+      opacity: 0,
+      stagger: {
+        amount: 1,
+        from: "right"
+      },
+      ease: easing,
+      delay: 2.2
+    });
   }
 }
 </script>
@@ -145,3 +153,10 @@ a:hover:after{
   }
 }
 </style>
+
+
+<!-- <li v-for="(blog, index) in blogPosts" :key="index">
+  <span >
+    {{ blog.title }}
+  </span>
+</li> -->
